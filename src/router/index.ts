@@ -1,4 +1,6 @@
-import Day01 from '@/views/day01/index.vue'
+import Layout from '@/layout/index.vue'
+import EchartBasic1 from '@/views/echart/basic/index1.vue'
+import EchartBasic2 from '@/views/echart/basic/index2.vue'
 import { createRouter, createWebHistory } from 'vue-router'
 
 const router = createRouter({
@@ -6,8 +8,24 @@ const router = createRouter({
   routes: [
     {
       path: '/',
-      name: 'home',
-      component: Day01,
+      component: Layout,
+      redirect: '/echart/basic',
+      children: [
+        {
+          path: 'echart/basic',
+          name: 'echartBasic',
+          component: EchartBasic1,
+          meta: {
+            title: '基础图表',
+            icon: 'Histogram',
+          },
+        },
+        {
+          path: 'echart/basic2',
+          name: 'echartBasic2',
+          component: EchartBasic2,
+        },
+      ],
     },
   ],
 })
