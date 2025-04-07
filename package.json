@@ -1,0 +1,67 @@
+{
+  "name": "vxt-table11",
+  "type": "module",
+  "version": "0.0.0",
+  "private": true,
+  "packageManager": "pnpm@9.4.0",
+  "scripts": {
+    "type-check": "vue-tsc --noEmit",
+    "dev": " pnpm type-check &&  vite",
+    "build": "pnpm type-check && vite build",
+    "preview": "vite preview",
+    "build-only": "vite build",
+    "commit": "git-cz",
+    "lint": "eslint",
+    "lint:fix": "eslint --fix",
+    "prepare": "husky"
+  },
+  "dependencies": {
+    "@element-plus/icons-vue": "^2.3.1",
+    "@lynx-vben/request": "1.0.0",
+    "@tailwindcss/vite": "^4.0.12",
+    "axios": "^1.8.2",
+    "element-plus": "^2.9.6",
+    "mitt": "^3.0.1",
+    "pinia": "^3.0.1",
+    "tailwindcss": "^4.0.12",
+    "uuid": "^11.1.0",
+    "vite-plugin-vue-setup-extend": "^0.4.0",
+    "vue": "^3.5.13",
+    "vue-router": "^4.5.0",
+    "vxe-pc-ui": "4.4.12",
+    "vxe-table": "4.11.22"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^4.8.1",
+    "@ayu-mu/model": "^1.0.3",
+    "@commitlint/cli": "^19.8.0",
+    "@commitlint/config-conventional": "^19.8.0",
+    "@tsconfig/node22": "^22.0.0",
+    "@types/node": "^22.13.9",
+    "@vitejs/plugin-vue": "^5.2.1",
+    "@vitejs/plugin-vue-jsx": "^4.1.2",
+    "@vue/eslint-config-typescript": "^14.5.0",
+    "@vue/tsconfig": "^0.7.0",
+    "cz-git": "^1.11.1",
+    "eslint": "^9.22.0",
+    "eslint-plugin-format": "^1.0.1",
+    "eslint-plugin-vue": "~10.0.0",
+    "husky": "^9.1.7",
+    "jiti": "^2.4.2",
+    "lint-staged": "^15.4.3",
+    "npm-run-all2": "^7.0.2",
+    "sass-embedded": "^1.86.0",
+    "typescript": "~5.8.0",
+    "unplugin-auto-import": "^19.1.1",
+    "unplugin-vue-components": "^28.4.1",
+    "vite": "^6.2.1",
+    "vite-plugin-lazy-import": "^1.0.7",
+    "vite-plugin-vue-devtools": "^7.7.2",
+    "vue-tsc": "^2.2.8"
+  },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-git"
+    }
+  }
+}

@@ -1,0 +1,10 @@
+.vxe-loading-wrapper .el-loading-spinner {
+  .el-loading-text {
+    color: #606266;
+    font-size: 14px;
+  }
+  .circular {
+    width: 30px;
+    height: 30px;
+  }
+}
