@@ -16,24 +16,24 @@ function initChart() {
     chartInstance.value = echarts.init(chartRef.value)
     chartInstance.value.setOption<echarts.EChartsOption>({
       title: {
-        text: '柱状图',
+        text: '折线图',
       },
       tooltip: {},
       xAxis: {
-        data: ['一月', '二月', '三月', '四月', '五月', '六月'],
+
       },
-      yAxis: {},
+      yAxis: {
+
+      },
       series: [
         {
-          type: 'bar',
-          data: [120, 200, 150, 80, 70, 110],
-          barWidth: '20%',
+          data: [10, 22, 28, 43, 49],
+          type: 'line',
           stack: 'x',
         },
         {
-          type: 'bar',
-          data: [110, 100, 200, 90, 80, 120],
-          barWidth: '20%',
+          data: [5, 4, 3, 5, 10],
+          type: 'line',
           stack: 'x',
         },
       ],
