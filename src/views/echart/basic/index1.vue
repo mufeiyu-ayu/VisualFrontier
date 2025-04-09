@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import Bar from './components/bar.vue'
+import Circle from './components/circle.vue'
 import Cookie from './components/cookie.vue'
 import Dialog from './components/dialog.vue'
 import Polyline from './components/Polyline.vue'
@@ -13,6 +14,7 @@ const sortBarRef = ref<InstanceType<typeof SortComponent> | null>(null)
 const polylineRef = ref<InstanceType<typeof Polyline> | null>(null)
 const stackPolRef = ref<InstanceType<typeof StackPol> | null>(null)
 const cookieRef = ref<InstanceType<typeof Cookie> | null>(null)
+const circleRef = ref<InstanceType<typeof Circle> | null>(null)
 </script>
 
 <template>
@@ -22,6 +24,7 @@ const cookieRef = ref<InstanceType<typeof Cookie> | null>(null)
   <Polyline ref="polylineRef" />
   <StackPol ref="stackPolRef" />
   <Cookie ref="cookieRef" />
+  <Circle ref="circleRef" />
   <div>
     <ElButton @click="dialogRef.open()">
       打开弹窗
@@ -40,6 +43,9 @@ const cookieRef = ref<InstanceType<typeof Cookie> | null>(null)
     </ElButton>
     <ElButton @click="cookieRef.open()">
       打开饼图
+    </ElButton>
+    <ElButton @click="circleRef.open()">
+      打开圆环图
     </ElButton>
   </div>
 </template>

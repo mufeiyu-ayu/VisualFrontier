@@ -6,24 +6,65 @@ const visible = ref(false)
 const chartRef = ref<HTMLElement | null>(null)
 const chartInstance = ref<echarts.ECharts | null>(null)
 const option = {
+  title: {
+    text: '圆环图的例子',
+    left: 'center',
+    top: 'center',
+  },
   series: [
     {
       type: 'pie',
       data: [
         {
           value: 335,
-          name: '直接访问',
+          name: 'A',
         },
         {
           value: 234,
-          name: '联盟广告',
+          name: 'B',
         },
         {
           value: 1548,
-          name: '搜索引擎',
+          name: 'C',
         },
       ],
-      radius: '100%',
+      radius: ['40%', '70%'],
+    },
+  ],
+}
+console.log(option)
+const option2 = {
+  legend: {
+    orient: 'vertical',
+    x: 'right',
+    data: ['A', 'B', 'C', 'D', 'E'],
+  },
+  series: [
+    {
+      type: 'pie',
+      radius: ['50%', '70%'],
+      avoidLabelOverlap: false,
+      label: {
+        show: false,
+        position: 'center',
+      },
+      labelLine: {
+        show: false,
+      },
+      emphasis: {
+        label: {
+          show: true,
+          fontSize: '30',
+          fontWeight: 'bold',
+        },
+      },
+      data: [
+        { value: 335, name: 'A' },
+        { value: 310, name: 'B' },
+        { value: 234, name: 'C' },
+        { value: 135, name: 'D' },
+        { value: 1548, name: 'E' },
+      ],
     },
   ],
 }
@@ -38,10 +79,10 @@ function initChart() {
     chartInstance.value = echarts.init(chartRef.value)
     chartInstance.value.setOption({
       title: {
-        text: '饼图',
+        text: '圆环图',
       },
       tooltip: {},
-      ...option,
+      ...option2,
     })
   }
 }
