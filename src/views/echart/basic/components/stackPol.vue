@@ -20,23 +20,31 @@ function initChart() {
       },
       tooltip: {},
       xAxis: {
-
+        type: 'category',
+        data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
       },
       yAxis: {
-
+        type: 'value',
       },
       series: [
         {
-          data: [
-            10,
-            30,
-            50,
-            100,
-          ],
+          name: 'Step Start',
           type: 'line',
-          stack: 'x',
+          step: 'start',
+          data: [120, 132, 101, 134, 90, 230, 210],
         },
-
+        {
+          name: 'Step Middle',
+          type: 'line',
+          step: 'middle',
+          data: [220, 282, 201, 234, 290, 430, 410],
+        },
+        {
+          name: 'Step End',
+          type: 'line',
+          step: 'end',
+          data: [450, 432, 401, 454, 590, 530, 510],
+        },
       ],
     })
   }

@@ -1,14 +1,18 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import Bar from './components/bar.vue'
+import Cookie from './components/cookie.vue'
 import Dialog from './components/dialog.vue'
 import Polyline from './components/Polyline.vue'
 import SortComponent from './components/sortBar.vue'
+import StackPol from './components/stackPol.vue'
 
 const dialogRef = ref<InstanceType<typeof Dialog> | null>(null)
 const barRef = ref<InstanceType<typeof Bar> | null>(null)
 const sortBarRef = ref<InstanceType<typeof SortComponent> | null>(null)
 const polylineRef = ref<InstanceType<typeof Polyline> | null>(null)
+const stackPolRef = ref<InstanceType<typeof StackPol> | null>(null)
+const cookieRef = ref<InstanceType<typeof Cookie> | null>(null)
 </script>
 
 <template>
@@ -16,6 +20,8 @@ const polylineRef = ref<InstanceType<typeof Polyline> | null>(null)
   <Bar ref="barRef" />
   <SortComponent ref="sortBarRef" />
   <Polyline ref="polylineRef" />
+  <StackPol ref="stackPolRef" />
+  <Cookie ref="cookieRef" />
   <div>
     <ElButton @click="dialogRef.open()">
       打开弹窗
@@ -28,6 +34,12 @@ const polylineRef = ref<InstanceType<typeof Polyline> | null>(null)
     </ElButton>
     <ElButton @click="polylineRef.open()">
       打开折线图
+    </ElButton>
+    <ElButton @click="stackPolRef.open()">
+      打开堆叠折线图
+    </ElButton>
+    <ElButton @click="cookieRef.open()">
+      打开饼图
     </ElButton>
   </div>
 </template>

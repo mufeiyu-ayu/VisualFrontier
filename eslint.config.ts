@@ -41,6 +41,7 @@ export default antfu(
           max: 1,
         },
       }], // 单行属性最大3个，多行属性最大1个
+      'ts/consistent-type-imports': 'off',
     },
 
   },

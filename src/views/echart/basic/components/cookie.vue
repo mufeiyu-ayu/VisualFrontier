@@ -5,6 +5,28 @@ import { nextTick, onUnmounted, ref } from 'vue'
 const visible = ref(false)
 const chartRef = ref<HTMLElement | null>(null)
 const chartInstance = ref<echarts.ECharts | null>(null)
+const option = {
+  series: [
+    {
+      type: 'pie',
+      data: [
+        {
+          value: 335,
+          name: '直接访问',
+        },
+        {
+          value: 234,
+          name: '联盟广告',
+        },
+        {
+          value: 1548,
+          name: '搜索引擎',
+        },
+      ],
+      radius: '100%',
+    },
+  ],
+}
 function initChart() {
   if (chartRef.value) {
     // 如果已经有实例，先销毁
@@ -14,30 +36,12 @@ function initChart() {
 
     // 创建新实例
     chartInstance.value = echarts.init(chartRef.value)
-    chartInstance.value.setOption<echarts.EChartsOption>({
+    chartInstance.value.setOption({
       title: {
         text: '折线图',
       },
       tooltip: {},
-      xAxis: {
-
-      },
-      yAxis: {
-
-      },
-      series: [
-        {
-          data: [
-            10,
-            30,
-            50,
-            100,
-          ],
-          type: 'line',
-          stack: 'x',
-        },
-
-      ],
+      ...option,
     })
   }
 }
