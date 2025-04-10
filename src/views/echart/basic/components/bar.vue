@@ -17,6 +17,24 @@ function initChart() {
     chartInstance.value.setOption<echarts.EChartsOption>({
       title: {
         text: '柱状图',
+        show: true,
+        left: 'center',
+        top: 'top',
+        link: 'https://www.baidu.com',
+        textStyle: {
+          color: 'blue',
+          fontSize: 20,
+          fontWeight: 'bold',
+          fontFamily: 'Arial',
+          fontStyle: 'italic',
+        },
+        subtext: '副标题',
+        sublink: 'https://www.baidu.com',
+        subtextStyle: {
+          color: 'red',
+          fontSize: 16,
+          fontWeight: 'bold',
+        },
       },
       tooltip: {},
       xAxis: {

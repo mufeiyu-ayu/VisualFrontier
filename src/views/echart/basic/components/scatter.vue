@@ -5,42 +5,56 @@ import { nextTick, onUnmounted, ref } from 'vue'
 const visible = ref(false)
 const chartRef = ref<HTMLElement | null>(null)
 const chartInstance = ref<echarts.ECharts | null>(null)
+const option = {
+  xAxis: {
+    data: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
+  },
+  yAxis: {},
+  series: [
+    {
+      type: 'scatter',
+      data: [220, 182, 191, 234, 290, 330, 310],
+    },
+  ],
+}
+
+/**   笛卡尔 */
+const option2 = {
+  xAxis: {},
+  yAxis: {},
+  series: [
+    {
+      type: 'scatter',
+      data: [
+        [10, 5],
+        [0, 8],
+        [6, 10],
+        [2, 12],
+        [8, 9],
+      ],
+    },
+  ],
+}
+console.log(option2)
 function initChart() {
   if (chartRef.value) {
     // 如果已经有实例，先销毁
     if (chartInstance.value) {
       chartInstance.value.dispose()
     }
-
     // 创建新实例
     chartInstance.value = echarts.init(chartRef.value)
-    chartInstance.value.setOption<echarts.EChartsOption>({
+    chartInstance.value.showLoading()
+
+    chartInstance.value.setOption({
       title: {
-        text: '折线图',
+        text: '散点图',
       },
       tooltip: {},
-      xAxis: {
-
-      },
-      yAxis: {
-
-      },
-      series: [
-        {
-          data: [
-            10,
-            30,
-            50,
-            20,
-            100,
-          ],
-          type: 'line',
-          stack: 'x',
-        },
-
-      ],
+      ...option,
     })
   }
+  chartInstance.value.hideLoading()
 }
 function handleOpen() {
   visible.value = true
