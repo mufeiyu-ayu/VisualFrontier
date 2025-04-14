@@ -4,6 +4,7 @@ import Bar from './components/bar.vue'
 import Circle from './components/circle.vue'
 import Cookie from './components/cookie.vue'
 import Dialog from './components/dialog.vue'
+import Grid from './components/grid.vue'
 import Polyline from './components/Polyline.vue'
 import Scatter from './components/scatter.vue'
 import SortComponent from './components/sortBar.vue'
@@ -17,6 +18,7 @@ const stackPolRef = ref<InstanceType<typeof StackPol> | null>(null)
 const cookieRef = ref<InstanceType<typeof Cookie> | null>(null)
 const circleRef = ref<InstanceType<typeof Circle> | null>(null)
 const scatterRef = ref<InstanceType<typeof Scatter> | null>(null)
+const gridRef = ref<InstanceType<typeof Grid> | null>(null)
 </script>
 
 <template>
@@ -28,6 +30,7 @@ const scatterRef = ref<InstanceType<typeof Scatter> | null>(null)
   <Cookie ref="cookieRef" />
   <Circle ref="circleRef" />
   <Scatter ref="scatterRef" />
+  <Grid ref="gridRef" />
   <div>
     <ElButton @click="dialogRef.open()">
       打开弹窗
@@ -52,6 +55,9 @@ const scatterRef = ref<InstanceType<typeof Scatter> | null>(null)
     </ElButton>
     <ElButton @click="scatterRef.open()">
       打开散点图
+    </ElButton>
+    <ElButton @click="gridRef.open()">
+      打开网格
     </ElButton>
   </div>
 </template>
